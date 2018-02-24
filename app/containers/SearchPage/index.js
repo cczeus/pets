@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
+import Dropdown from 'react-dropdown'
+import 'react-dropdown/style.css'
 
 import RaisedButton from 'material-ui/RaisedButton';
 import styled from 'styled-components';
@@ -26,6 +28,9 @@ import FlatButton from 'material-ui/FlatButton';
 import Timeline from 'material-ui/svg-icons/action/timeline';
 import LightBulb from 'material-ui/svg-icons/action/lightbulb-outline';
 import School from 'material-ui/svg-icons/social/school';
+
+
+import PetTile from '../../components/PetTile';
 
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
@@ -153,8 +158,24 @@ class SearchPage extends Component {
   }
 
   
-
   render() {
+    const options = [
+  { value: 'one', label: 'One' },
+  { value: 'two', label: 'Two', className: 'myOptionClassName' },
+  {
+   type: 'group', name: 'group1', items: [
+     { value: 'three', label: 'Three', className: 'myOptionClassName' },
+     { value: 'four', label: 'Four' }
+   ]
+  },
+  {
+   type: 'group', name: 'group2', items: [
+     { value: 'five', label: 'Five' },
+     { value: 'six', label: 'Six' }
+   ]
+  }
+];
+
  
     return (   
         <div id={styles.wrapper}>
@@ -163,7 +184,7 @@ class SearchPage extends Component {
             <div className={styles.inner}>
 
                 <a href="index.html" className={styles.logo}>
-                  <span class="symbol"><img src="images/logo.svg" alt="" /></span><span className={styles.title}>Phantom</span>
+                  <span className={styles.symbol}><img src="img/logo.svg" alt="" /></span><span className={styles.title}>Pets</span>
                 </a>
 
                 <nav>
@@ -178,58 +199,29 @@ class SearchPage extends Component {
             <div className={styles.inner}>
               <header>
                 <h1>Beer me a pet<br />
-                 <a href="http://html5up.net">HTML5 UP</a>.</h1>
+                 <a></a></h1>
                 <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
               </header>
+              <section>
+              <form onSubmit={this.handleSubmit}>
+                <label>
+                    Keywords
+                    <input type="text"/>
+                </label>
+                <input type="submit" value="Submit" />
+                
+             </form>
+              </section>
               <section className={styles.tiles}>
-              <article className={styles.style1}>
-                  <span className={styles.image}>
-                    <img src="images/pic01.jpg" alt="" height={300}/>
-                  </span>
-                  <a href="generic.html">
-                    <h2>Pretium</h2>
-                    <div className={styles.content}>
-                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                    </div>
-                  </a>
-                </article>
-                <article className={styles.style2}>
-                  <span className={styles.image}>
-                    <img src="images/pic02.jpg" alt="" height={300}/>
-                  </span>
-                  <a href="generic.html">
-                    <h2>Pretium</h2>
-                    <div className={styles.content}>
-                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                    </div>
-                  </a>
-                </article>
-                <article className={styles.style3}>
-                  <span className={styles.image}>
-                    <img src="images/pic03.jpg" alt="" height={300}/>
-                  </span>
-                  <a href="generic.html">
-                    <h2>Pretium</h2>
-                    <div className={styles.content}>
-                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                    </div>
-                  </a>
-                </article>
-                <article className={styles.style4}>
-                  <span className={styles.image}>
-                    <img src="images/pic12.jpg" alt="" height={300}/>
-                  </span>
-                  <a href="generic.html">
-                    <h2>Pretium</h2>
-                    <div className={styles.content}>
-                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-                    </div>
-                  </a>
-                </article>
+                <PetTile name="Dogs" type={1} />
+                <PetTile name="Cats" type={2} />
+                <PetTile name="Rabbits" type={3} />
+                <PetTile name="..." type={4} />
+                <PetTile name="..." type={5} />
               </section>
             </div>
           </div>
-
+<Dropdown onChange={this._onSelect} value={"test"} placeholder="Select an option" />
 
 
         </div>

@@ -38,6 +38,7 @@
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
+    "react-dropdown": "^1.4.0",
     "react-mfb": "^0.6.0",
     "react-redux": "^5.0.6",
     "react-router": "^2.8.1",

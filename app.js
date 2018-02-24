@@ -15,7 +15,6 @@ const config = require('./server/config/config');
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.use(favicon(path.join(__dirname, 'public/img/nurfIcons/favicon.ico')));
 //app.use(cookieParser());
 
 // Run development
