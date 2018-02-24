@@ -157,11 +157,83 @@ class SearchPage extends Component {
   render() {
  
     return (   
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <div className={styles.wrapper}>
-          
+        <div id={styles.wrapper}>
+         
+          <header id={styles.header}>
+            <div className={styles.inner}>
+
+                <a href="index.html" className={styles.logo}>
+                  <span class="symbol"><img src="images/logo.svg" alt="" /></span><span className={styles.title}>Phantom</span>
+                </a>
+
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Menu</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+          </header>
+          <div id={styles.main}>
+            <div className={styles.inner}>
+              <header>
+                <h1>This is Phantom, a free, fully responsive site<br />
+                template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
+                <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+              </header>
+              <section className={styles.tiles}>
+              <article className={styles.style1}>
+                  <span className={styles.image}>
+                    <img src="images/pic12.jpg" alt="" height={300}/>
+                  </span>
+                  <a href="generic.html">
+                    <h2>Pretium</h2>
+                    <div className={styles.content}>
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article className={styles.style2}>
+                  <span className={styles.image}>
+                    <img src="images/pic12.jpg" alt="" height={300}/>
+                  </span>
+                  <a href="generic.html">
+                    <h2>Pretium</h2>
+                    <div className={styles.content}>
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article className={styles.style3}>
+                  <span className={styles.image}>
+                    <img src="images/pic12.jpg" alt="" height={300}/>
+                  </span>
+                  <a href="generic.html">
+                    <h2>Pretium</h2>
+                    <div className={styles.content}>
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article className={styles.style4}>
+                  <span className={styles.image}>
+                    <img src="images/pic12.jpg" alt="" height={300}/>
+                  </span>
+                  <a href="generic.html">
+                    <h2>Pretium</h2>
+                    <div className={styles.content}>
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+              </section>
+            </div>
+          </div>
+
+
+
         </div>
-      </MuiThemeProvider>
+      
     );
   }
 }
