@@ -184,7 +184,7 @@ class SearchPage extends Component {
               <section className={styles.tiles}>
               <article className={styles.style1}>
                   <span className={styles.image}>
-                    <img src="images/pic12.jpg" alt="" height={300}/>
+                    <img src="images/pic01.jpg" alt="" height={300}/>
                   </span>
                   <a href="generic.html">
                     <h2>Pretium</h2>
@@ -195,7 +195,7 @@ class SearchPage extends Component {
                 </article>
                 <article className={styles.style2}>
                   <span className={styles.image}>
-                    <img src="images/pic12.jpg" alt="" height={300}/>
+                    <img src="images/pic02.jpg" alt="" height={300}/>
                   </span>
                   <a href="generic.html">
                     <h2>Pretium</h2>
@@ -206,7 +206,7 @@ class SearchPage extends Component {
                 </article>
                 <article className={styles.style3}>
                   <span className={styles.image}>
-                    <img src="images/pic12.jpg" alt="" height={300}/>
+                    <img src="images/pic03.jpg" alt="" height={300}/>
                   </span>
                   <a href="generic.html">
                     <h2>Pretium</h2>
