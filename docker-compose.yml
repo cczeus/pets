@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - db
+    environment:
+      NODE_ENV: production
+      MONGO_URL: mongodb://db:27017/nurfgg
+    ports:
+      - 80:8000
+    command: npm start
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile-development
+    links:
+      - db
+    environment:
+      NODE_ENV: development
+      MONGO_URL: mongodb://db:27017/nurfgg
+    ports:
+      - 8000:8000
+    command: npm run dev-start
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"

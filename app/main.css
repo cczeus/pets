@@ -1,0 +1,120 @@
+.textXL {
+    font-size: 3.4vh;
+}
+.textL {
+    font-size: 2.5vh;
+}
+.textXM {
+    font-size: 2.0vh;
+}
+.textM {
+    font-size: 1.5vh;
+}
+.textS {
+    font-size: 0.5vh;
+}
+
+/* PHONES */
+@media only screen and (min-width: 267px) and (max-width: 700px) and (orientation : portrait){
+    .textL {
+        font-size: 2vh;
+    }
+    .textXM {
+    font-size: 2.0vh;
+    }
+    .textM {
+        font-size: 1.5vh;
+    }
+    .textS {
+        font-size: 0.5vh;
+    }
+}
+@media only screen and (min-width: 267px) and (max-width: 700px) and (orientation : landscape){
+    .textL {
+        font-size: 3vh;
+    }
+    .textXM {
+        font-size: 2.0vh;
+    }
+    .textM {
+        font-size: 1.5vh;
+    }
+    .textS {
+        font-size: 0.5vh;
+    }
+}
+
+
+/* TABLETS */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : portrait)  {
+    .textXL {
+        font-size: 2.5vh;
+    }
+    .textL {
+        font-size: 2vh;
+    }
+    .textXM {
+        font-size: 2.0vh;
+    }
+    .textM {
+        font-size: 1.5vh;
+    }
+    .textS {
+        font-size: 0.5vh;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : landscape)  {
+    .textL {
+        font-size: 2.5vh;
+    }
+    .textXM {
+        font-size: 2.0vh;
+    }
+    .textM {
+        font-size: 1.5vh;
+    }
+    .textS {
+        font-size: 0.5vh;
+    }
+
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1499px)  {
+    .textL {
+        font-size: 2.0vh;
+    }
+    .textXM {
+        font-size: 2.0vh;
+    }
+    .textM {
+        font-size: 1.5vh;
+    }
+    .textS {
+        font-size: 0.5vh;
+    }
+
+}
+
+/* LARGE SCREENS */
+@media only screen and (min-width: 1500px) {
+    .textXL {
+        font-size: 3vh !important;
+    }
+    .textL {
+        /*font-size: 2.3vh !important;*/
+        font-size: 1.5vh !important;
+    }
+    .textXM {
+        font-size: 2.0vh;
+    }
+    .textM {
+        font-size: 1.0vh !important;
+    }
+    .textS {
+        font-size: 0.5vh !important;
+    }
+}
+
