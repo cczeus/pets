@@ -3,7 +3,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { TOPBAR_HEIGHT, C_BLUE_300, blue600, grey400, cyan500, grey300, white, fullBlack, C_BLUE_400, darkBlack, pinkA200, arkBlack, grey500, grey100, C_BLUE_700, C_WHITE, C_PRIMARY_TEXT, C_PRIMARY_BACKGROUND, C_SECONDARY} from '../../library/constants.js';
-
+import ReviewBar from '../ReviewBar'
+import Description from '../Description';
 const styles = {
   headline: {
     fontSize: 24,
@@ -57,18 +58,12 @@ export default class TabBar extends React.Component {
       >
         <Tab label="Description" value="a">
           <div>
-            <h2 style={styles.headline}>Description</h2>
-            <p>
-              Scottish Folds are hardy cats, much like their barnyard ancestors. Their disposition matches their sweet expression. They have tiny voices and are not extremely vocal. They adore human companionship and display this in their own quiet way.
-            </p>
+            <Description />
           </div>
         </Tab>
         <Tab label="User Review" value="b">
           <div>
-            <h2 style={styles.headline}>User Reviews</h2>
-            <p>
-              Solid cat
-            </p>
+             <ReviewBar />
           </div>
         </Tab>
       </Tabs>

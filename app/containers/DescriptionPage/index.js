@@ -47,6 +47,8 @@ import Overview from '../../components/Overview';
 import TopBar from '../../components/TopBar';
 import TabBar from '../../components/TabBar';
 
+
+
 import styles from './styles.css';
 import textStyle from '../../main.css';
 const Header = styled(FlexWrapper) `
@@ -168,11 +170,6 @@ class DescriptionPage extends Component {
           <header id={styles.header}>
             <div className={styles.inner}>
          
-                <nav>
-                  <ul>
-                    <li><a href="#menu">Menu</a></li>
-                  </ul>
-                </nav>
 
             </div>
           </header>
@@ -190,8 +187,9 @@ class DescriptionPage extends Component {
           </nav>
 
       
-          <div id={styles.main}>
-        
+          <div>
+    
+
             <div className={styles.inner}>
               <h1>Scottish Fold</h1>
               <img src="img/scottishfold.jpg" height= "400" width= "600" /> 
@@ -199,7 +197,6 @@ class DescriptionPage extends Component {
             </div>
 
           </div>
-
         
 
       </div>
