@@ -3,9 +3,10 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { TOPBAR_HEIGHT, C_BLUE_300, blue600, grey400, cyan500, grey300, white, fullBlack, C_BLUE_400, darkBlack, pinkA200, arkBlack, grey500, grey100, C_BLUE_700, C_WHITE, C_PRIMARY_TEXT, C_PRIMARY_BACKGROUND, C_SECONDARY} from '../../library/constants.js';
-import ReviewBarCat1 from '../ReviewBarCat1'
-import ReviewBarCat2 from '../ReviewBarCat2'
-import Description from '../Description';
+import ReviewBar from '../ReviewBar'
+import ReviewBar1 from '../ReviewBar1'
+import ReviewBar2 from '../ReviewBar1_2'
+import Description from '../Description1';
 const styles = {
   headline: {
     fontSize: 24,
@@ -64,9 +65,8 @@ export default class TabBar extends React.Component {
         </Tab>
         <Tab label="User Review" value="b">
           <div>
-             <ReviewBarCat1 />
-             <ReviewBarCat2 />
-             
+             <ReviewBar1 />
+             <ReviewBar2 />
           </div>
         </Tab>
       </Tabs>

@@ -22,7 +22,6 @@ class ReviewBar extends Component {
       energy: 3
     };
   }
-
   render() {
     var tags = this.state.tags.join(', ');
 
@@ -30,16 +29,16 @@ class ReviewBar extends Component {
       <div style={{ borderBottom: 'solid 1px #c9c9c9', width: '100%', marginTop: 50 }}>
         <FlexWrapper row flex="1" style={{  marginLeft: 16}}>
           <FlexWrapper column flex="1">
-           <Rating name="Obedience"/>
+           <Rating name="Maintenance"/>
           </FlexWrapper>
            <FlexWrapper column flex="1">
-            <Rating name="Trainability" rating={4}/>
+            <Rating name="Obedience" rating={4}/>
           </FlexWrapper>
           <FlexWrapper column flex="1">
-            <Rating name="Family Friendly"/>
+            <Rating name="Loudness"/>
           </FlexWrapper>
           <FlexWrapper column flex="1">
-            <Rating name="Obedience" rating={3.5}/>
+            <Rating name="Energy Level" rating={3.5}/>
           </FlexWrapper>
         </FlexWrapper>
         <div>
@@ -57,7 +56,7 @@ class ReviewBar extends Component {
           fontStyle: 'italic',
           margin:'1em 0 0em 0',
           padding: '0.05em 0 0.05em 0.05em'}}>
-            <p>"Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore."</p>
+            <p>"My scottish fold loves to play a lot! I let him out now and then and he loves to roam and hunt. I had to be patient when introducing him to my other cat"</p>
              <p>- James</p>
           </div>
         </div>
