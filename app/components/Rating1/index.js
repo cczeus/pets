@@ -15,7 +15,7 @@ class Rating extends Component {
   render() {
     return (
       <div style={{ width: 150 }}>
-        <TheRating initialRating={this.props.rating ? parseInt(this.props.rating) : 5} />
+        <TheRating initialRating={this.props.rating ? this.props.rating : 5} />
         <p style={{ textAlign: 'center' }}>{this.props.name}</p>
       </div>
     );

@@ -253,17 +253,7 @@ class SearchPage extends Component {
                   <DropDownMenu
                     value={this.state.value1}
                     onChange={this.handleChange1}
-                    style={{right: 23}}
-                  >
-                    <MenuItem value={0} primaryText={dropDownItems1[0]} />
-                    <MenuItem value={1} primaryText={dropDownItems1[1]} />
-                    <MenuItem value={2} primaryText={dropDownItems1[2]} />
-                    <MenuItem value={3} primaryText={dropDownItems1[3]} />
-                </DropDownMenu>
-                
-                 <DropDownMenu
-                    value={this.state.value2}
-                    onChange={this.handleChange2}
+                    style={{ right: 23 }}
                   >
                     <MenuItem value={0} primaryText={dropDownItems1[0]} />
                     <MenuItem value={1} primaryText={dropDownItems1[1]} />
@@ -275,7 +265,7 @@ class SearchPage extends Component {
 
                 <input type="submit" value="Add" />
 
-                <input type="submit" value="Submit" style={{marginLeft: 15}}/>
+                <input type="submit" value="Submit" style={{marginLeft: 15}} onClick={() => { browserHistory.push('/breedlist/query')}}/>
                
              </form>
               
@@ -284,8 +274,6 @@ class SearchPage extends Component {
                 <PetTile name="Dogs" type={1} />
                 <PetTile name="Cats" type={2} />
                 <PetTile name="Rabbits" type={3} />
-                <PetTile name="..." type={4} />
-                <PetTile name="..." type={5} />
               </section>
             </div>
           </div>

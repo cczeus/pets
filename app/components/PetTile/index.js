@@ -35,14 +35,14 @@ class PetTile extends Component {
 
   render() {
     return (   
-      <article className={styles["style" + this.props.type]} onClick={() => {browserHistory.push('/' + this.props.name.toLowerCase())}}>
+      <article className={styles["style" + this.props.type]} onClick={() => {browserHistory.push('/breedlist/' + this.props.name.toLowerCase())}}>
         <span className={styles.image}>
           <img src="img/pic08.jpg" alt="" height={300}/>
         </span>
         <a>
           <h2>{this.props.name}</h2>
           <div className={styles.content}>
-            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            
           </div>
         </a>
       </article>

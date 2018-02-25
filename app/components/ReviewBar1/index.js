@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import styles from '../../containers/SearchPage/styles.css';
 import { Card, CardHeader, CardActions, CardText } from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Rating from '../../components/Rating';
+import Rating from '../../components/Rating1';
 import TheRating from 'react-rating'
 import FlexWrapper from '../../library/FlexWrapper';
-import Chip from 'material-ui/Chip';
-
+import Chip from 'material-ui/Chip'; 
 
 
 class ReviewBar extends Component {
@@ -23,7 +22,6 @@ class ReviewBar extends Component {
       energy: 3
     };
   }
-
   render() {
     var tags = this.state.tags.join(', ');
 
@@ -31,16 +29,16 @@ class ReviewBar extends Component {
       <div style={{ borderBottom: 'solid 1px #c9c9c9', width: '100%', marginTop: 50 }}>
         <FlexWrapper row flex="1" style={{  marginLeft: 16}}>
           <FlexWrapper column flex="1">
-           <Rating name="Obedience"/>
+           <Rating name="Maintainance" rating={4}/>
           </FlexWrapper>
            <FlexWrapper column flex="1">
-            <Rating name="Trainability" rating={4}/>
+            <Rating name="Obedience" rating={5}/>
           </FlexWrapper>
           <FlexWrapper column flex="1">
-            <Rating name="Family Friendly"/>
+            <Rating name="Loudness" rating={3}/>
           </FlexWrapper>
           <FlexWrapper column flex="1">
-            <Rating name="Obedience" rating={3.5}/>
+            <Rating name="Energy Level" rating={4}/>
           </FlexWrapper>
         </FlexWrapper>
         <div>
@@ -58,8 +56,8 @@ class ReviewBar extends Component {
           fontStyle: 'italic',
           margin:'1em 0 0em 0',
           padding: '0.05em 0 0.05em 0.05em'}}>
-            <p>"Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore."</p>
-             <p>- James</p>
+            <p>"Love my Golden Retriever! She's very active and requires a lot of attention. She's also fun-loving and is very easy to introduce to other pets. They do require maintenance so keep that in mind before thinking about adopting one of your own."</p>
+             <p>- Thomas</p>
           </div>
         </div>
       </div>
