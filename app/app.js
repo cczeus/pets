@@ -4,6 +4,7 @@ import { createHistory } from 'history';
 
 
 import SearchPage from './containers/SearchPage';
+import DescriptionPage from './containers/DescriptionPage';
 
 import injectFonts from './utils/injectFonts';
 import history from './utils/history';
@@ -19,9 +20,13 @@ class App extends Component {
   }
   render() {
     return (    
+      <div>
       <Router history={browserHistory}>
         <Route path="/" component={SearchPage} />
+         <Route path="/description" component={DescriptionPage} />
       </Router>
+     
+      </div>
     );
   }
 }

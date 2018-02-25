@@ -9,7 +9,7 @@ class Rating extends Component {
     this.state = {
       title: props.title,
       value: props.value
-    };
+    }; 
   }
 
   render() {

@@ -8,6 +8,7 @@ import FlexWrapper from '../../library/FlexWrapper';
 import Chip from 'material-ui/Chip';
 
 
+
 class ReviewBar extends Component {
   constructor() {
     super();
