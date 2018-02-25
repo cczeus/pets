@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Rating from '../../components/Rating';
 import TheRating from 'react-rating'
 import FlexWrapper from '../../library/FlexWrapper';
-import Chip from 'material-ui/Chip';
+import Chip from 'material-ui/Chip'; 
 
 
 class ReviewBar extends Component {
