@@ -2454,9 +2454,9 @@
 
     input[type="submit"],
     input[type="reset"],
-    input[type="button"],
-    button,
-    .button {
+/*    input[type="button"],*/
+/*    button,
+*/    .button {
         -moz-appearance: none;
         -webkit-appearance: none;
         -ms-appearance: none;
@@ -2485,6 +2485,8 @@
         text-transform: uppercase;
         white-space: nowrap;
     }
+
+ 
 
         input[type="submit"].icon:before,
         input[type="reset"].icon:before,

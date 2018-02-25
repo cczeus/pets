@@ -7,9 +7,10 @@ import SearchPage from './containers/SearchPage';
 
 import injectFonts from './utils/injectFonts';
 import history from './utils/history';
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectFonts();
+injectTapEventPlugin();
 
 class App extends Component {
   componentDidMount() {

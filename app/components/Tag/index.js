@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { browserHistory } from 'react-router';
-
 import {
   cyan500, cyan700,
   pinkA200,
@@ -23,6 +19,8 @@ import Spacer from '../../library/Spacer';
 import Text from '../../library/Text';
 import styles from '../../containers/SearchPage/styles.css'
 
+import Chip from 'material-ui/Chip';
+
 
 
 class PetTile extends Component {
@@ -35,18 +33,12 @@ class PetTile extends Component {
 
   render() {
     return (   
-      <article className={styles["style" + this.props.type]} onClick={() => {browserHistory.push('/' + this.props.name.toLowerCase())}}>
-        <span className={styles.image}>
-          <img src="img/pic08.jpg" alt="" height={300}/>
-        </span>
-        <a>
-          <h2>{this.props.name}</h2>
-          <div className={styles.content}>
-            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-          </div>
-        </a>
-      </article>
-     
+    
+      <Chip
+          style={{ minWidth: 50, marginLeft: 10 }}
+        >
+          {this.props.name}
+        </Chip>
    
     );
   }

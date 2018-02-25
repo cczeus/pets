@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import Dropdown from 'react-dropdown'
-import 'react-dropdown/style.css'
+
 
 import RaisedButton from 'material-ui/RaisedButton';
 import styled from 'styled-components';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import Paper from 'material-ui/Paper';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
@@ -31,6 +33,7 @@ import School from 'material-ui/svg-icons/social/school';
 
 
 import PetTile from '../../components/PetTile';
+import Tag from '../../components/Tag';
 
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
@@ -101,14 +104,33 @@ class SearchPage extends Component {
       summonerName: '',
       fetching: props.store.get('fetching'),
       searchHistory: cookies.get("searchHistory"),
+      value1: 1,
+      value2: 2,
+      dropDownItems1: ["Category", "Family Friendly", "Low maintenance", "Obedient"],
+      dropDownItems2: ["Category", "Family Friendly", "Low maintenance", "Obedient"],
+      inputValue: "",
+      tags: [],
     };
     this.handleDrawerChange = this.handleDrawerChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
-    this.handleSummonerSearch = this.handleSummonerSearch.bind(this);
+    
     this.handleTabChange = this.handleTabChange.bind(this);
+    this.handleChange1 = this.handleChange1.bind(this);
+    this.handleChange2 = this.handleChange2.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
 
   }
 
+  setTab(tag) {
+    var tags = this.state.tags;
+    console.log("tag is " + tag)
+    if(tag.length > 2) {
+       tags.push(tag);
+    }
+    this.setState({ tags })
+
+  }
   handleDrawerChange() {
     this.setState({
       drawerOpen: !this.state.drawerOpen,
@@ -131,6 +153,30 @@ class SearchPage extends Component {
     }
     
   }
+ handleChange1(event, index, value1) {
+  if(value1 !== 0)
+    this.setTab(this.state.dropDownItems1[value1])
+
+    this.setState({value1})
+  }
+
+
+  handleChange2(event, index, value2) {
+     this.setTab(value2)
+    
+  }
+
+  handleTextChange(event) {
+    this.setState({inputValue: event.target.value});
+  }
+
+   handleSubmit(event) {
+    var tags = this.state.tags;
+    this.setTab(this.state.inputValue)
+   
+    this.setState({inputValue: ""})
+    event.preventDefault();
+  }
   addSummonerToCookie(summoner) {
     const searchHistory = cookies.get("searchHistory");
     if(searchHistory.indexOf(summoner) === -1) { 
@@ -145,39 +191,19 @@ class SearchPage extends Component {
     }
   }
 
-  handleSummonerSearch = (summoner) => (event) => {
-    this.setState({ 
-      summonerSearch: true, summonerName: summoner, fetching: this.props.store.get('fetching') 
-    }, function() {
-      const fetchInProgress = String(this.props.store.get('fetching'));
-      this.props.dispatch(
-        getSummonerData({summonerName: summoner, region: 'NA1'})
-      );
-    });
-      
-  }
 
   
   render() {
-    const options = [
-  { value: 'one', label: 'One' },
-  { value: 'two', label: 'Two', className: 'myOptionClassName' },
-  {
-   type: 'group', name: 'group1', items: [
-     { value: 'three', label: 'Three', className: 'myOptionClassName' },
-     { value: 'four', label: 'Four' }
-   ]
-  },
-  {
-   type: 'group', name: 'group2', items: [
-     { value: 'five', label: 'Five' },
-     { value: 'six', label: 'Six' }
-   ]
-  }
-];
+    const dropDownOptions = {
+      options: {
+        horizontal: "right"
+      }
+    }
+    const dropDownItems1 = this.state.dropDownItems1;
 
  
-    return (   
+    return (  
+       <MuiThemeProvider muiTheme={muiTheme}> 
         <div id={styles.wrapper}>
          
           <header id={styles.header}>
@@ -198,20 +224,53 @@ class SearchPage extends Component {
           <div id={styles.main}>
             <div className={styles.inner}>
               <header>
-                <h1>Beer me a pet<br />
-                 <a></a></h1>
-                <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+                <h1>Beer me a pet<br /></h1>
+                <FlexWrapper column flex="1" style={{position: 'relative', right: 10}}>
+                  <FlexWrapper row flex="1">
+                    {this.state.tags.map(function(tag){
+                      return <Tag key={tag} name={tag}/>;
+                    })}
+                  </FlexWrapper>
+                </FlexWrapper>
               </header>
-              <section>
+              
+              <section style={{ marginTop: 25}}>
               <form onSubmit={this.handleSubmit}>
                 <label>
                     Keywords
-                    <input type="text"/>
+                    <input type="text" value={this.state.inputValue} onChange={this.handleTextChange}/>
                 </label>
-                <input type="submit" value="Submit" />
+                 <div>
+                  <DropDownMenu
+                    value={this.state.value1}
+                    onChange={this.handleChange1}
+                    style={{right: 23}}
+                  >
+                    <MenuItem value={0} primaryText={dropDownItems1[0]} />
+                    <MenuItem value={1} primaryText={dropDownItems1[1]} />
+                    <MenuItem value={2} primaryText={dropDownItems1[2]} />
+                    <MenuItem value={3} primaryText={dropDownItems1[3]} />
+                </DropDownMenu>
                 
+                 <DropDownMenu
+                    value={this.state.value2}
+                    onChange={this.handleChange2}
+                  >
+                    <MenuItem value={0} primaryText={dropDownItems1[0]} />
+                    <MenuItem value={1} primaryText={dropDownItems1[1]} />
+                    <MenuItem value={2} primaryText={dropDownItems1[2]} />
+                    <MenuItem value={3} primaryText={dropDownItems1[3]} />
+                </DropDownMenu>
+
+              </div>
+
+                <input type="submit" value="Add" />
+
+                <input type="submit" value="Submit" style={{marginLeft: 15}}/>
+               
              </form>
-              </section>
+              
+            </section>
               <section className={styles.tiles}>
                 <PetTile name="Dogs" type={1} />
                 <PetTile name="Cats" type={2} />
@@ -221,11 +280,9 @@ class SearchPage extends Component {
               </section>
             </div>
           </div>
-<Dropdown onChange={this._onSelect} value={"test"} placeholder="Select an option" />
-
 
         </div>
-      
+      </MuiThemeProvider>
     );
   }
 }
