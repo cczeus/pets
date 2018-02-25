@@ -3,6 +3,8 @@ import styles from '../../containers/SearchPage/styles.css';
 import { Card, CardHeader, CardActions, CardText } from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Rating from '../../components/Rating';
+import TheRating from 'react-rating'
+import FlexWrapper from '../../library/FlexWrapper';
 
 
 class ReviewBar extends Component {
@@ -21,26 +23,32 @@ class ReviewBar extends Component {
   }
 
   render() {
-
     var tags = this.state.tags.join(', ');
     return (   
-      <Card style={{width: '100%'}}>
-        <CardHeader
-          title={this.state.name}
-          subtitle={tags}
-          actAsExpander={false}
-          showExpandableButton={false}
-        />
-        <CardActions>
-          <Rating title={'Maintenance'} value={this.state.maintenance} />
-          <Rating title={'Obedience'} value={this.state.obedience} />
-          <Rating title={'Loudness'} value={this.state.loudness} />
-          <Rating title={'Energy'} value={this.state.energy} />
-        </CardActions>
-        <CardText expandable={false}>
-          {this.state.review}
-        </CardText>
-      </Card>
+      <div style={{ borderBottom: 'solid 1px #c9c9c9', width: '100%', paddingTop: 10, marginTop: 50 }}>
+        <FlexWrapper row flex="1">
+          <FlexWrapper column flex="1">
+           <Rating name="Obedience"/>
+          </FlexWrapper>
+           <FlexWrapper column flex="1">
+            <Rating name="Trainability"/>
+          </FlexWrapper>
+          <FlexWrapper column flex="1">
+            <Rating name="Family Friendly"/>
+          </FlexWrapper>
+          <FlexWrapper column flex="1">
+            <Rating name="Obedience"/>
+          </FlexWrapper>
+        </FlexWrapper>
+        <div>
+        <div style={{  borderLeft: 'solid 4px #c9c9c9',
+          fontStyle: 'italic',
+          margin:'0 0 1em 0',
+          padding: '0.05em 0 0.05em 1em'}}>
+            <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+          </div>
+        </div>
+      </div>
     );
   }
 }

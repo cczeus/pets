@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TheRating from 'react-rating'
 
 
 class Rating extends Component {
@@ -13,7 +14,10 @@ class Rating extends Component {
 
   render() {
     return (
-      <p>{this.state.title}: {this.state.value}</p>
+      <div style={{ width: 150 }}>
+        <TheRating initialRating={5} />
+        <p style={{ textAlign: 'center' }}>{this.props.name}</p>
+      </div>
     );
   }
 }
