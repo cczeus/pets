@@ -52,7 +52,7 @@ class Description extends Component {
         <div>
             <h2 style={styles.headline}>Average Life Span</h2>
             <p>
-              18 Years
+              About 15 Years
             </p>
         </div>
         <div>

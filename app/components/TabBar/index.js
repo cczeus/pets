@@ -64,6 +64,9 @@ export default class TabBar extends React.Component {
         <Tab label="User Review" value="b">
           <div>
              <ReviewBar />
+             <ReviewBar />
+             <ReviewBar />
+             <ReviewBar />
           </div>
         </Tab>
       </Tabs>

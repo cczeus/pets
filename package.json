@@ -42,6 +42,7 @@
     "react-dom": "^15.6.1",
     "react-dropdown": "^1.4.0",
     "react-mfb": "^0.6.0",
+    "react-rating": "^1.0.5",
     "react-redux": "^5.0.6",
     "react-router": "^2.8.1",
     "react-router-dom": "^4.2.2",
