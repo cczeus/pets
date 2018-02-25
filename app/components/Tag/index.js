@@ -23,7 +23,7 @@ import Chip from 'material-ui/Chip';
 
 
 
-class PetTile extends Component {
+class Tag extends Component {
   constructor() {
     super();
 
@@ -36,6 +36,7 @@ class PetTile extends Component {
     
       <Chip
           style={{ minWidth: 50, marginLeft: 10 }}
+          onRequestDelete={() => this.props.handleRequestDelete(this.props.name)}
         >
           {this.props.name}
         </Chip>
@@ -44,4 +45,4 @@ class PetTile extends Component {
   }
 }
 
-export default PetTile;
+export default Tag;

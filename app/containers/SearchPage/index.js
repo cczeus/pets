@@ -119,12 +119,21 @@ class SearchPage extends Component {
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleRequestDelete = this.handleRequestDelete.bind(this);
 
   }
 
-  setTab(tag) {
+
+  handleRequestDelete(key) {
     var tags = this.state.tags;
-    console.log("tag is " + tag)
+    const tagToDelete = tags.map((tag) => tag).indexOf(key);
+    tags.splice(tagToDelete, 1);
+    this.setState({tags});
+  }
+
+  setTag(tag) {
+    var tags = this.state.tags;
+
     if(tag.length > 2) {
        tags.push(tag);
     }
@@ -155,14 +164,14 @@ class SearchPage extends Component {
   }
  handleChange1(event, index, value1) {
   if(value1 !== 0)
-    this.setTab(this.state.dropDownItems1[value1])
+    this.setTag(this.state.dropDownItems1[value1])
 
     this.setState({value1})
   }
 
 
   handleChange2(event, index, value2) {
-     this.setTab(value2)
+     this.setTag(value2)
     
   }
 
@@ -172,7 +181,7 @@ class SearchPage extends Component {
 
    handleSubmit(event) {
     var tags = this.state.tags;
-    this.setTab(this.state.inputValue)
+    this.setTag(this.state.inputValue)
    
     this.setState({inputValue: ""})
     event.preventDefault();
@@ -200,7 +209,7 @@ class SearchPage extends Component {
       }
     }
     const dropDownItems1 = this.state.dropDownItems1;
-
+    const instance = this;
  
     return (  
        <MuiThemeProvider muiTheme={muiTheme}> 
@@ -228,7 +237,7 @@ class SearchPage extends Component {
                 <FlexWrapper column flex="1" style={{position: 'relative', right: 10}}>
                   <FlexWrapper row flex="1">
                     {this.state.tags.map(function(tag){
-                      return <Tag key={tag} name={tag}/>;
+                      return <Tag key={tag} name={tag} handleRequestDelete={instance.handleRequestDelete}/>;
                     })}
                   </FlexWrapper>
                 </FlexWrapper>
