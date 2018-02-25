@@ -46,7 +46,6 @@ class BreedList extends Component {
 			{breed: "Pug", maintenance: "3", obedience: "4", loudness: "3", energy: "3", img: "../img/pug.jpg"},
 			{breed: "Chihuahua", maintenance: "3", obedience: "5", loudness: "3", energy: "5", img: "../img/chihuahua.jpg"},
 		];
-
 		var list = multiList;
 		
 		var query = this.props.params.query.toLowerCase();
